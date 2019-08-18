@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>postmessage</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	</head>
+	<body>
+		<iframe id="frame1" name="frame1" src="http://172.20.10.2:8020/vuecase/src/components/two.html"></iframe>
+ 		<input type="text" id="text1" value=""/>
+ 		<input type="button" id="send" value="发送"/>
+	</body>
+	<script type="text/javascript">
+		window.onload= function(){
+   			var iframeWindow=document.getElementById('frame1').contentWindow;
+   			document.getElementById('send').onclick=function(){
+     			var value=document.getElementById("text1").value;
+     			iframeWindow.postMessage(value,'http://172.20.10.2:8020');
+   			}
+		}
+	</script>
+</html>

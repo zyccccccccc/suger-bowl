@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	</head>
+	<body>
+		<div id="app"></div>
+	</body>
+	<script type="text/javascript">
+		  var Profile = Vue.extend({
+          	template: '<p>姓名:{{firstName}} {{lastName}}</p>',
+	            data: function (){
+	               return {
+	                 firstName: '王',
+	                 lastName: '小明'
+	               }
+	            }
+          })
+          new Profile().$mount('#app')//创建Profile实例，并挂载到一个元素上
+	</script>
+</html>
